@@ -32,14 +32,14 @@ Os planos foram **validados contra o script `gerar_bases.py`**, que gera os arqu
 
 | | # | Tema | Plano | Tabelas (dimensão · fato) | Linhas |
 |:-:|:-:|:--|:--|:--|--:|
-| <img src="icones/01-estacionamento.svg" width="40" alt="Estacionamento"> | 1 | Estacionamento | [01-estacionamento.md](01-estacionamento.md) | `vagas` · `movimentacoes` | 52.200 |
-| <img src="icones/02-posto-de-saude.svg" width="40" alt="Posto de saude"> | 2 | Posto de saúde (triagem) | [02-posto-de-saude.md](02-posto-de-saude.md) | `pacientes` · `atendimentos` | 52.500 |
-| <img src="icones/03-streaming-de-filmes.svg" width="40" alt="Streaming de filmes"> | 3 | Streaming de filmes | [03-streaming-de-filmes.md](03-streaming-de-filmes.md) | `filmes` · `visualizacoes` | 65.300 |
-| <img src="icones/04-atendimento-ao-cliente.svg" width="40" alt="Atendimento ao cliente"> | 4 | Atendimento ao cliente | [04-atendimento-ao-cliente.md](04-atendimento-ao-cliente.md) | `clientes` · `chamados` | 52.400 |
-| <img src="icones/05-passagens-aereas.svg" width="40" alt="Passagens aereas"> | 5 | Passagens aéreas | [05-passagens-aereas.md](05-passagens-aereas.md) | `voos` · `reservas` | 65.600 |
-| <img src="icones/06-servico-meteorologico.svg" width="40" alt="Servico meteorologico"> | 6 | Serviço meteorológico | [06-servico-meteorologico.md](06-servico-meteorologico.md) | `estacoes` · `leituras` | 72.050 |
-| <img src="icones/07-telemetria-esportiva.svg" width="40" alt="Telemetria esportiva"> | 7 | Telemetria esportiva | [07-telemetria-esportiva.md](07-telemetria-esportiva.md) | `pilotos` · `voltas` | 65.800 |
-| <img src="icones/08-festival-de-musica.svg" width="40" alt="Festival de musica"> | 8 | Festival de música | [08-festival-de-musica.md](08-festival-de-musica.md) | `atracoes` · `ingressos_vendidos` | 65.100 |
+| <img src="icones/01-estacionamento.svg" width="40" alt="Estacionamento"> | 1 | Estacionamento | [01-estacionamento.md](bases_dados/01-estacionamento/01-estacionamento.md) | `vagas` · `movimentacoes` | 52.200 |
+| <img src="icones/02-posto-de-saude.svg" width="40" alt="Posto de saude"> | 2 | Posto de saúde (triagem) | [02-posto-de-saude.md](bases_dados/02-posto-de-saude/02-posto-de-saude.md) | `pacientes` · `atendimentos` | 52.500 |
+| <img src="icones/03-streaming-de-filmes.svg" width="40" alt="Streaming de filmes"> | 3 | Streaming de filmes | [03-streaming-de-filmes.md](bases_dados/03-streaming-de-filmes/03-streaming-de-filmes.md) | `filmes` · `visualizacoes` | 65.300 |
+| <img src="icones/04-atendimento-ao-cliente.svg" width="40" alt="Atendimento ao cliente"> | 4 | Atendimento ao cliente | [04-atendimento-ao-cliente.md](bases_dados/04-atendimento-ao-cliente/04-atendimento-ao-cliente.md) | `clientes` · `chamados` | 52.400 |
+| <img src="icones/05-passagens-aereas.svg" width="40" alt="Passagens aereas"> | 5 | Passagens aéreas | [05-passagens-aereas.md](bases_dados/05-passagens-aereas/05-passagens-aereas.md) | `voos` · `reservas` | 65.600 |
+| <img src="icones/06-servico-meteorologico.svg" width="40" alt="Servico meteorologico"> | 6 | Serviço meteorológico | [06-servico-meteorologico.md](bases_dados/06-servico-meteorologico/06-servico-meteorologico.md) | `estacoes` · `leituras` | 72.050 |
+| <img src="icones/07-telemetria-esportiva.svg" width="40" alt="Telemetria esportiva"> | 7 | Telemetria esportiva | [07-telemetria-esportiva.md](bases_dados/07-telemetria-esportiva/07-telemetria-esportiva.md) | `pilotos` · `voltas` | 65.800 |
+| <img src="icones/08-festival-de-musica.svg" width="40" alt="Festival de musica"> | 8 | Festival de música | [08-festival-de-musica.md](bases_dados/08-festival-de-musica/08-festival-de-musica.md) | `atracoes` · `ingressos_vendidos` | 65.100 |
 
 ---
 
@@ -67,4 +67,3 @@ Os planos foram **validados contra o script `gerar_bases.py`**, que gera os arqu
 
 - **Nenhum dado pessoal real.** Todo nome de pessoa ou identificador é gerado (Faker ou sorteio), nunca de pessoa real. Regra do projeto: `.claude/rules/etica-privacidade-e-agentes.md`.
 - No tema 2 (saúde), a regra é reforçada por tratar de dado sensível por natureza, mesmo fictício.
-

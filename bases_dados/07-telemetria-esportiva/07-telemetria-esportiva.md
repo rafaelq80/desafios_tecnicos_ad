@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/07-telemetria-esportiva.svg" width="88" height="88" alt="Icone do tema Telemetria esportiva">
+  <img src="../../icones/07-telemetria-esportiva.svg" width="88" height="88" alt="Icone do tema Telemetria esportiva">
 </p>
 
 <h1 align="center">Tema 7 &mdash; Telemetria Esportiva (Corridas)</h1>
@@ -108,4 +108,4 @@ As 55.000 voltas formam 1.100 corridas, cada uma com 10 pilotos e 5 voltas por p
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)

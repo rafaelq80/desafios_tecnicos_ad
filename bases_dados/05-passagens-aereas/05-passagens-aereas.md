@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/05-passagens-aereas.svg" width="88" height="88" alt="Icone do tema Passagens aereas">
+  <img src="../../icones/05-passagens-aereas.svg" width="88" height="88" alt="Icone do tema Passagens aereas">
 </p>
 
 <h1 align="center">Tema 5 &mdash; Compra de Passagens Aéreas</h1>
@@ -111,4 +111,4 @@ Média de aproximadamente 5 reservas por voo.
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/08-festival-de-musica.svg" width="88" height="88" alt="Icone do tema Festival de musica">
+  <img src="../../icones/08-festival-de-musica.svg" width="88" height="88" alt="Icone do tema Festival de musica">
 </p>
 
 <h1 align="center">Tema 8 &mdash; Festival de Música</h1>
@@ -112,4 +112,4 @@ Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linha
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)

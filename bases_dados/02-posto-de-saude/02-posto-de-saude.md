@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/02-posto-de-saude.svg" width="88" height="88" alt="Icone do tema Posto de saude">
+  <img src="../../icones/02-posto-de-saude.svg" width="88" height="88" alt="Icone do tema Posto de saude">
 </p>
 
 <h1 align="center">Tema 2 &mdash; Posto de Saúde (Triagem)</h1>
@@ -126,4 +126,4 @@ Média de aproximadamente 4 atendimentos por paciente, entre 01/01/2025 e 01/08/
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)

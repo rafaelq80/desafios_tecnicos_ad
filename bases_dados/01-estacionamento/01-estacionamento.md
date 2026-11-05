@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/01-estacionamento.svg" width="88" height="88" alt="Icone do tema Estacionamento">
+  <img src="../../icones/01-estacionamento.svg" width="88" height="88" alt="Icone do tema Estacionamento">
 </p>
 
 <h1 align="center">Tema 1 &mdash; Estacionamento</h1>
@@ -114,4 +114,4 @@ Média de aproximadamente 4 movimentações por vaga, distribuídas entre 01/01/
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)
