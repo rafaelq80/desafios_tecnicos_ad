@@ -113,10 +113,4 @@ Período simulado: 01/01/2025 a 01/08/2026. Em média há cerca de 6 leituras po
 
 ---
 
-## Pendências
-
-- `[A VERIFICAR]` confirmar com o instrutor se a série deve ser periódica por estação (leitura horária ou a cada 3 h). Isso exigiria alterar a geração de `leituras` e mudaria a volumetria final, e facilitaria gráficos de linha por estação.
-
----
-
 [Voltar ao índice](README.md)

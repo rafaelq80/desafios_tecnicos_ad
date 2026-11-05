@@ -108,11 +108,4 @@ As 55.000 voltas formam 1.100 corridas, cada uma com 10 pilotos e 5 voltas por p
 
 ---
 
-## Pendências
-
-- `[A VERIFICAR]` confirmar se o "simulador de corrida online" citado no pedido original é uma ferramenta específica (ex.: um simulador já usado pela Generation) cujos campos de telemetria devem ser espelhados, ou se este esquema genérico está livre para ser usado como está.
-- `[DECISÃO HUMANA]` confirmar se corridas de 5 voltas com 10 pilotos são aceitáveis para a turma, ou se o instrutor prefere corridas mais longas (o que exigiria reduzir o número de corridas para manter 55.000 linhas).
-
----
-
 [Voltar ao índice](README.md)

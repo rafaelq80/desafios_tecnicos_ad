@@ -126,11 +126,4 @@ Média de aproximadamente 4 atendimentos por paciente, entre 01/01/2025 e 01/08/
 
 ---
 
-## Pendências
-
-- `[DECISÃO HUMANA]` confirmar se o instrutor quer incluir CID (Classificação Internacional de Doenças) simplificado como coluna adicional. Aumentaria o realismo, mas exige tabela de apoio própria.
-- `[A VERIFICAR]` os tempos-alvo por cor citados acima devem ser revistos com um profissional de saúde antes de aparecerem em material publicado como "padrão", mesmo em contexto didático.
-
----
-
 [Voltar ao índice](README.md)

@@ -1,9 +1,9 @@
 <h1 align="center">Planos de Base de Dados por Tema</h1>
 
 <p align="center">
-  Oito temas, oito bases mockadas, um esquema fixo de colunas.<br>
-  Material de apoio do Trabalho 1 (Python) e dos Desafios 2 a 5.
+  Oito temas, oito bases de dados geradas via Python + Faker, um esquema fixo de colunas.
 </p>
+
 
 <p align="center">
   <img src="icones/01-estacionamento.svg" width="48" height="48" alt="Estacionamento">
@@ -20,7 +20,7 @@
 
 ## Sobre este material
 
-No Trabalho 1 (Python), cada participante escolhe um dos 8 temas abaixo e segue com ele durante o bootcamp inteiro. O mesmo tema alimenta os Desafios 2 (Estatística), 3 (Excel), 4 (SQL/Data Vis) e 5 (Big Data).
+No Desafio 1 (Python), cada participante escolhe um dos 8 temas abaixo e segue com ele durante o bootcamp inteiro. O mesmo tema alimentará os Desafios 2 (Estatística), 3 (Excel), 4 (SQL/Data Vis) e 5 (Big Data).
 
 Cada arquivo desta pasta é o **plano de modelagem** da base mockada daquele tema: nomes de coluna definidos, tipos de tabela, cardinalidade, volumetria e regras de geração. Os nomes de coluna são fixos de propósito: Python, Excel e SQL precisam bater exatamente com esse esquema, sem erro de digitação entre desafios.
 
@@ -68,10 +68,3 @@ Os planos foram **validados contra o script `gerar_bases.py`**, que gera os arqu
 - **Nenhum dado pessoal real.** Todo nome de pessoa ou identificador é gerado (Faker ou sorteio), nunca de pessoa real. Regra do projeto: `.claude/rules/etica-privacidade-e-agentes.md`.
 - No tema 2 (saúde), a regra é reforçada por tratar de dado sensível por natureza, mesmo fictício.
 
----
-
-## Pendências gerais
-
-- `[DECISÃO HUMANA]` confirmar se a Generation já disponibiliza um dataset-modelo próprio para algum destes temas (o enunciado do Desafio 3 menciona "dados mockados, dentro do excel, disponibilizados pela GEN"). Se existir, este plano deve ser conciliado com ele, não substituí-lo.
-- `[A VERIFICAR]` a volumetria pode ser ajustada por decisão do instrutor, desde que mantenha o mínimo de 20.000 linhas somadas por tema.
-- `[A VERIFICAR]` as leituras do tema 6 não são periódicas por estação (limitação da volumetria mínima de 10.000 estações), e as corridas do tema 7 são curtas (5 voltas). Confirmar com o instrutor se ambos são aceitáveis para o curso.

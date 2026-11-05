@@ -102,10 +102,4 @@ Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linha
 
 ---
 
-## Pendências
-
-- `[A VERIFICAR]` confirmar com o instrutor se o material publicado pode citar plataformas de streaming reais como referência de contexto (sem usar catálogo real) ou se deve permanecer 100% genérico.
-
----
-
 [Voltar ao índice](README.md)

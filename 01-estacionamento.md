@@ -114,10 +114,4 @@ Média de aproximadamente 4 movimentações por vaga, distribuídas entre 01/01/
 
 ---
 
-## Pendências
-
-- `[A VERIFICAR]` confirmar se o instrutor quer incluir tarifação por tempo excedente/tolerância (regra de negócio adicional) já nesta fase ou só na expansão do Desafio 4.
-
----
-
 [Voltar ao índice](README.md)

@@ -104,10 +104,4 @@ Média de aproximadamente 4 chamados por cliente, entre 01/01/2025 e 01/08/2026.
 
 ---
 
-## Pendências
-
-- `[A VERIFICAR]` confirmar se `nota_satisfacao` deve seguir escala CSAT (1 a 5) ou incluir também NPS (0 a 10) como coluna adicional, a depender do que o instrutor quer ensinar no Desafio 2.
-
----
-
 [Voltar ao índice](README.md)

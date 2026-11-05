@@ -112,10 +112,4 @@ Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linha
 
 ---
 
-## Pendências
-
-- `[A VERIFICAR]` confirmar com o instrutor se a simplificação "venda vinculada à atração" é aceitável para o nível da turma ou se o modelo já deve nascer com `dias_festival` como entidade própria desde o Desafio 1.
-
----
-
 [Voltar ao índice](README.md)

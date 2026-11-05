@@ -111,10 +111,4 @@ Média de aproximadamente 5 reservas por voo.
 
 ---
 
-## Pendências
-
-- `[A VERIFICAR]` o script já usa nomes de cidades reais (contexto geográfico, não dado pessoal). Confirmar com o instrutor se isso é aceitável ou se ele prefere nomes 100% fictícios para reforçar que a base é mockada.
-
----
-
 [Voltar ao índice](README.md)
