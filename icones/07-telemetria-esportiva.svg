@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="96" height="96" role="img" aria-labelledby="t">
+  <title id="t">Telemetria esportiva</title>
+  <rect width="64" height="64" rx="14" fill="#B91C1C"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 44a21 21 0 1 1 42 0"/>
+    <path d="M32 44l9-12"/>
+    <circle cx="32" cy="44" r="3" fill="#FFFFFF"/>
+    <path d="M16 30l3 2M32 20v4M48 30l-3 2" stroke-width="2.500"/>
+    <path d="M16 52h32"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="96" height="96" role="img" aria-labelledby="t">
+  <title id="t">Passagens aéreas</title>
+  <rect width="64" height="64" rx="14" fill="#0369A1"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#FFFFFF" stroke-width="1.6" d="M32 8c2 0 3.2 1.8 3.2 4v13.5L52 36v5l-16.8-5v10l5 3.8V54L32 52l-8.2 2v-4.2l5-3.8V36L12 41v-5l16.8-10.5V12c0-2.200 1.200-4 3.200-4z"/>
+  </g>
+</svg>

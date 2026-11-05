@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="96" height="96" role="img" aria-labelledby="t">
+  <title id="t">Serviço meteorológico</title>
+  <rect width="64" height="64" rx="14" fill="#0E7490"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 40a8 8 0 0 1 1.500-15.800A11 11 0 0 1 42.500 27 7 7 0 0 1 43 40z"/>
+    <path d="M23 47l-3 7M33 47l-3 7M43 47l-3 7"/>
+  </g>
+</svg>

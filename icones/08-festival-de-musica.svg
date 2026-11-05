@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="96" height="96" role="img" aria-labelledby="t">
+  <title id="t">Festival de música</title>
+  <rect width="64" height="64" rx="14" fill="#BE185D"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M25 45V17l22-5v28"/>
+    <path d="M25 26l22-5"/>
+    <circle cx="19" cy="46" r="6" fill="#FFFFFF"/>
+    <circle cx="41" cy="41" r="6" fill="#FFFFFF"/>
+  </g>
+</svg>
