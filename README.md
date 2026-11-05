@@ -1,9 +1,6 @@
-<h1 align="center">Planos de Base de Dados por Tema</h1>
-
 <p align="center">
-  Oito temas, oito bases de dados geradas via Python + Faker, um esquema fixo de colunas.
+  <img src="imagens/banner.png" alt="banner">
 </p>
-
 
 <p align="center">
   <img src="icones/01-estacionamento.svg" width="48" height="48" alt="Estacionamento">
@@ -18,6 +15,16 @@
 
 ---
 
+## Guias e Conteúdos dos desafios
+
+Os materiais de cada atividade serão reunidos nesta tabela para facilitar a navegação pelo repositório.
+
+| Desafio | Material | Conteúdo |
+|---------|----------|----------|
+| 1 · Python, API e IA | [Guia do Desafio 01](Guia_Desafio1_Google_Colab.md) | Preparação e conteúdo da sessão |
+
+---
+
 ## Sobre este material
 
 No Desafio 1 (Python), cada participante escolhe um dos 8 temas abaixo e segue com ele durante o bootcamp inteiro. O mesmo tema alimentará os Desafios 2 (Estatística), 3 (Excel), 4 (SQL/Data Vis) e 5 (Big Data).
@@ -28,7 +35,7 @@ Os planos foram **validados contra o script `gerar_bases.py`**, que gera os arqu
 
 ---
 
-## Os 8 temas
+## Os temas
 
 | | # | Tema | Plano | Tabelas (dimensão · fato) | Linhas |
 |:-:|:-:|:--|:--|:--|--:|
@@ -65,5 +72,5 @@ Os planos foram **validados contra o script `gerar_bases.py`**, que gera os arqu
 
 **Ética e privacidade**
 
-- **Nenhum dado pessoal real.** Todo nome de pessoa ou identificador é gerado (Faker ou sorteio), nunca de pessoa real. Regra do projeto: `.claude/rules/etica-privacidade-e-agentes.md`.
+- **Nenhum dado pessoal real.** Todo nome de pessoa ou identificador é gerado (Faker ou sorteio), nunca de pessoa real.
 - No tema 2 (saúde), a regra é reforçada por tratar de dado sensível por natureza, mesmo fictício.
