@@ -8,7 +8,7 @@
   <tr>
     <td align="left" width="33%"><strong>Início</strong></td>
     <td align="center" width="34%"><a href="../README.md">README</a></td>
-    <td align="right" width="33%"><a href="Guia_Desafio1_Google_Colab_Parte2.md">Avançar → Parte 2</a></td>
+    <td align="right" width="33%"><a href="02.md">Avançar → Parte 2</a></td>
   </tr>
 </table>
 
@@ -21,7 +21,7 @@ Este guia conduz você da primeira ideia até a base de dados completa na planil
 | **Período**    | **Quando**                                                   | **O que é**                                                  |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **SÍNCRONO**   | Durante a sessão com o Instrutor                             | - Criar a conexão com a planilha<br />- Adicionar 10 linhas de teste da tabela dimensão, na primeira guia da planilha, via código<br />- Validar os dados adicionados |
-| **ASSÍNCRONO** | Dentro dos grupos organizados nas Salas do Teams (separadas por tema), depois da sessão síncrona. | - Adicionar 10 linhas de teste da tabela fato, na segunda guia da planilha, via código<br />- Validar os dados adicionados<br />- Carregar a base completa (disponível no repositório) na planilha<br />-  Validar o conteúdo carregado e entregar no Canvas. |
+| **ASSÍNCRONO** | Dentro dos grupos organizados nas Salas do Teams (separadas por tema), depois da sessão síncrona. | -  Gerar a Base de dados com as 2 tabelas em arquivos CSV, seguindo a Documentação da base escolhida<br />- Validar os dados gerados<br />- Carregar a base gerada na planilha<br />-  Validar o conteúdo carregado e entregar os arquivos no Canvas, via GitHub. |
 
 <br />
 
@@ -49,22 +49,23 @@ Este guia conduz você da primeira ideia até a base de dados completa na planil
 
 | **Passo** | **O que você faz**                                           | **Quando**        |
 | --------- | ------------------------------------------------------------ | ----------------- |
-| 1         | Criar a credencial de acesso (service account)               | Sessão Síncrona   |
-| 1B        | Criar o repositório no GitHub                                | Sessão Síncrona   |
-| 2         | Entender o que é uma API                                     | Sessão Síncrona   |
+| 1         | Criar a credencial de acesso (service account)               | Preparação        |
+| 1B        | Criar o repositório no GitHub                                | Preparação        |
+| 2         | Recapitular o conceito de API                                | Sessão Síncrona   |
 | 3         | Escolher o tema e ler o esquema de dados                     | Sessão Síncrona   |
 | 4         | IA responsável na geração de dados                           | Sessão Síncrona   |
 | 5         | Criar a planilha e compartilhar com a credencial             | Sessão Síncrona   |
-| 6         | Abrir o Colab e autenticar                                   | Sessão Síncrona   |
+| 6         | Criar um Notebook no Google Colab e Autenticar junto a planilha | Sessão Síncrona   |
+| 6B        | Escrever o script Python no Colab: instalar as bibliotecas, autenticar e abrir a planilha (Células 1 a 3) | Sessão Síncrona   |
 | 7         | Escrever o cabeçalho do esquema                              | Sessão Síncrona   |
-| 8         | Gerar e escrever 10 linhas de teste na tabela dimensão       | Sessão Síncrona   |
+| 8         | Gerar e inserir 10 linhas de teste na tabela dimensão (primeira guia) | Sessão Síncrona   |
 | 9         | Conferir o resultado na planilha                             | Sessão Síncrona   |
-| 10        | Gerar e escrever 10 linhas de teste na tabela fato           | Sessão Assíncrona |
-| 11        | Carregar as bases completas na planilha do Google Sheets     | Sessão Assíncrona |
-| 12        | Enviar para a planilha em lotes de 5000 linhas               | Sessão Assíncrona |
-| 13        | Validar a base completa na planilha                          | Sessão Assíncrona |
+| 10        | Definir o esquema e a estrutura da tabela fato (Células 7 e 8) | Sessão Assíncrona |
+| 11        | Gerar a base completa (tabelas dimensão e fato), validar e exportar em arquivos CSV (Células 9 e 10) | Sessão Assíncrona |
+| 12        | Enviar a base gerada para a planilha, em lotes de 5.000 linhas (Células 11 e 12) | Sessão Assíncrona |
+| 13        | Validar a base completa na planilha (Célula 13) | Sessão Assíncrona |
 | 14        | Registrar o uso de IA no código                              | Sessão Assíncrona |
-| 15        | Entregar no Canvas o link do Github (Notebook + Planilha com os dados) | Sessão Assíncrona |
+| 15        | Entregar no Canvas o link do Github (Notebook + CSV + Planilha com os dados) | Sessão Assíncrona |
 
 ---
 
@@ -76,8 +77,8 @@ A autenticação e as variáveis (planilha, nomes das colunas, função de gera�
 
 | **Parte**                     | **Células**                                                  | **Quando**                        |
 | ----------------------------- | ------------------------------------------------------------ | --------------------------------- |
-| **Parte 1 — Conexão e teste** | Células 1 a 6: instalar, autenticar, abrir a planilha, criar cabeçalho, gerar as 10 linhas na tabela dimensão e validar a planilha. | Na sessão (passos 6 a 9)          |
-| **Parte 2 — Base completa**   | Células 7 a 10: funções de envio, gerar as 10 linhas da tabela fato com relacionamento, carregar as tabelas, enviar em lotes e validar a planilha | Depois da sessão (passos 11 a 13) |
+| **Parte 1 — Conexão e teste** | Células 1 a 6: instalar, autenticar, abrir a planilha, criar cabeçalho, gerar as 10 linhas na tabela dimensão e validar a planilha. | Na sessão (passos 6B a 9)          |
+| **Parte 2 — Base completa**   | Células 7 a 13: esquema e estrutura da tabela fato (com relacionamento com a dimensão), gerar as tabelas dimensão e fato, validar e exportar em CSV, enviar para a planilha em lotes e validar a planilha | Depois da sessão (passos 10 a 13) |
 
 Se preferir separar, o mesmo código funciona em dois notebooks, mas lembre-se de que as credenciais precisam ser autorizadas em cada um deles individualmente.
 
@@ -274,7 +275,7 @@ Por que a escolha pesa:
 
 - Trocar de tema no meio do caminho custa retrabalho em tudo que já foi construído.
 
-- Cada tema já tem um **plano de esquema pronto**: nomes de coluna, tipos de tabela e volumetria mínima de **20.000 linhas somadas**. As bases geradas pelo script de cada tema ficam acima desse mínimo, com entre 52 mil e 72 mil linhas.
+- Cada tema já tem um **plano de esquema pronto**: nomes de coluna, tipos de tabela e volumetria mínima de **20.000 linhas somadas**.
 
 - Usar o esquema não é limitação, é consistência: os próximos desafios dependem do **nome exato** de cada coluna, e um nome errado gera erro adiante.
 
@@ -336,6 +337,7 @@ Combine as duas conforme a necessidade. Exemplo de pedido que deixa claro que o 
   <tr>
     <td align="left" width="33%"><strong>Início</strong></td>
     <td align="center" width="34%"><a href="../README.md">README</a></td>
-    <td align="right" width="33%"><a href="Guia_Desafio1_Google_Colab_Parte2.md">Avançar → Parte 2</a></td>
+    <td align="right" width="33%"><a href="02.md">Avançar → Parte 2</a></td>
   </tr>
 </table>
+
