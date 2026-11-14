@@ -35,15 +35,15 @@ Assim, você pratica o ciclo real de um analista de dados: **coletar, descrever,
 
 ## Os Desafios
 
-Cada desafio tem uma sessão guiada de cerca de 1 hora (abertura, conteúdo, prática e encerramento) e uma entrega construída de forma autônoma, com **tempo estimado de 150 a 180 minutos (2h30 a 3h) fora da sessão**.
+Cada desafio tem uma sessão guiada de cerca de 1 hora (abertura, conteúdo, prática e encerramento) e uma entrega construída de forma assíncrona, com **tempo estimado de 150 a 180 minutos (2h30 a 3h)**.
 
-| Desafio | Ferramenta | Tema técnico | O que você faz | Entrega | Material |
-|:-------:|:----------:|--------------|----------------|---------|----------|
-| 1 | <img src="icones/python.svg" width="40" alt="Python"> | Python, API e IA | Escolhe o tema, conecta o Python à Google Sheets API e popula a planilha com dados mockados, seguindo o esquema de colunas do tema e as regras de uso responsável de IA | Planilha Google com cabeçalho e dados do tema | [Guia do Desafio 01](desafio_01/Guia_Desafio1_Google_Colab.md)<br />[Documentação - Bases de Dados](https://github.com/rafaelq80/desafios_tecnicos_ad/bases_dados) |
-| 2 | <img src="icones/python.svg" width="40" alt="Python"> | Estatística com Python | Carrega a base em um DataFrame pandas, calcula medidas de tendência central e dispersão e transforma os números em insights | Relatório estatístico com recomendação de decisão (gráfico como diferencial) | <!-- [Guia do Desafio 02](desafio_02/NOME_DO_ARQUIVO.md) --> |
-| 3 | <img src="icones/excel.svg" width="40" alt="Excel"> | Excel: relatório dinâmico | Constrói um relatório com tabela dinâmica, gráficos e fórmulas obrigatórias (PROCV, SE, SEERRO, SOMASES, CONT.SES, MÉDIASES, entre outras) | Relatório dinâmico em Excel ou Google Sheets | <!-- [Guia do Desafio 03](desafio_03/NOME_DO_ARQUIVO.md) --> |
-| 4 | <img src="icones/sql.svg" width="40" alt="Banco de dados"> | SQL e Data Visualization | Evolui a base para um modelo relacional com mais tabelas, escreve consultas com join e subquery, cria views e refaz o relatório com o SQL como fonte | Modelo relacional, consultas e views, e relatório com SQL | <!-- [Guia do Desafio 04](desafio_04/NOME_DO_ARQUIVO.md) --> |
-| 5 | <img src="icones/big_data.png" width="80" alt="Big Data"> | Big Data com Python | Entende os 5 V's do Big Data e os conceitos básicos de machine learning, e aplica ambos ao tema escolhido | Artigo técnico curto, com argumento e fontes citadas | <!-- [Guia do Desafio 05](desafio_05/NOME_DO_ARQUIVO.md) --> |
+| Desafio | Ferramenta | Tema técnico | O que você faz | Entrega |
+|:-------:|:----------:|--------------|----------------|---------|
+| 1 | <img src="icones/python.svg" width="40" alt="Python"> | Python, API e IA | Escolhe o tema, conecta o Python à Google Sheets API e popula a planilha com dados mockados, seguindo o esquema de colunas do tema e as regras de uso responsável de IA | Planilha Google com cabeçalho e dados do tema |
+| 2 | <img src="icones/python.svg" width="40" alt="Python"> | Estatística com Python | Carrega a base em um DataFrame pandas, calcula medidas de tendência central e dispersão e transforma os números em insights | Relatório estatístico com recomendação de decisão (gráfico como diferencial) |
+| 3 | <img src="icones/excel.svg" width="40" alt="Excel"> | Excel: relatório dinâmico | Constrói um relatório com tabela dinâmica, gráficos e fórmulas obrigatórias (PROCV, SE, SEERRO, SOMASES, CONT.SES, MÉDIASES, entre outras) | Relatório dinâmico em Excel ou Google Sheets |
+| 4 | <img src="icones/sql.svg" width="40" alt="Banco de dados"> | SQL e Data Visualization | Evolui a base para um modelo relacional com mais tabelas, escreve consultas com join e subquery, cria views e refaz o relatório com o SQL como fonte | Modelo relacional, consultas e views, e relatório com SQL |
+| 5 | <img src="icones/big_data.png" width="80" alt="Big Data"> | Big Data com Python | Entende os 5 V's do Big Data e os conceitos básicos de machine learning, e aplica ambos ao tema escolhido | Artigo técnico curto, com argumento e fontes citadas |
 
 
 
