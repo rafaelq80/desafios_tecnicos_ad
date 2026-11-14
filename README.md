@@ -35,7 +35,7 @@ Assim, você pratica o ciclo real de um analista de dados: **coletar, descrever,
 
 ## Os Desafios
 
-Cada desafio tem uma sessão guiada de cerca de 1 hora (abertura, conteúdo, prática e encerramento) e uma entrega construída de forma autônoma, com **tempo estimado de 150 a 180 minutos (2h30 a 3h) fora da sessão**.
+Cada desafio tem uma sessão guiada de cerca de 1 hora (abertura, conteúdo, prática e encerramento) e uma entrega construída de forma assíncrona, com tempo estimado de 150 a 180 minutos (2h30 a 3h).
 
 | Desafio | Ferramenta | Tema técnico | O que você faz | Entrega | Material |
 |:-------:|:----------:|--------------|----------------|---------|----------|
