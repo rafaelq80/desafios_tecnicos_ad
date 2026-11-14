@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/06-servico-meteorologico.svg" width="88" height="88" alt="Icone do tema Servico meteorologico">
+  <img src="../../icones/06-servico-meteorologico.svg" width="88" height="88" alt="Icone do tema Servico meteorologico">
 </p>
 
 <h1 align="center">Tema 6 &mdash; Serviço Meteorológico</h1>
@@ -113,4 +113,4 @@ Período simulado: 01/01/2025 a 01/08/2026. Em média há cerca de 6 leituras po
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)

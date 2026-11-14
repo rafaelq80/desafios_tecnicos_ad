@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/08-festival-de-musica.svg" width="88" height="88" alt="Icone do tema Festival de musica">
+  <img src="../../icones/08-festival-de-musica.svg" width="88" height="88" alt="Icone do tema Festival de musica">
 </p>
 
 <h1 align="center">Tema 8 &mdash; Festival de Música</h1>
@@ -9,8 +9,8 @@
   Plano de modelagem da base de dados mockada
 </p>
 
-| Desafio de origem | Uso nos desafios | Situação | Gerador |
-|:--|:--|:--|:--|
+| Desafio de origem   | Uso nos desafios  | Situação                                           | Gerador                    |
+| :------------------ | :---------------- | :------------------------------------------------- | :------------------------- |
 | Trabalho 1 (Python) | 1 · 2 · 3 · 4 · 5 | Plano validado contra o script; base gerada em CSV | `gerar_bases.py` (seed 42) |
 
 **Nesta página:** [Contexto](#contexto-do-tema) · [Modelo de dados](#modelo-de-dados) · [Cardinalidade](#cardinalidade) · [Volumetria](#volumetria) · [Geração](#estratégia-de-geração-de-dados-mockados) · [Expansão](#expansão-sugerida-para-o-desafio-4) · [Pendências](#pendências)
@@ -27,27 +27,27 @@ Uma produtora de eventos com festivais de música de 3 dias, atrações em difer
 
 ### Tabela 1: `atracoes` (dimensão/cadastro)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `atracao_id` | inteiro | PK | Identificador único da atração |
-| `nome_artista_ficticio` | texto | | Nome fictício da banda/artista |
-| `genero_musical` | texto | | `rock` · `pop` · `mpb` · `eletronica` · `funk` · `sertanejo` · `rap` · `forró` · `reggae` |
-| `edicao_festival` | texto | | Edição do festival em que a atração se apresenta (ex.: "Festival X 2024") |
-| `dia_apresentacao` | data | | Dia do festival em que se apresenta (dentro da janela de 3 dias da edição) |
-| `palco` | texto | | `principal` · `secundario` · `eletronico` · `acustico` |
-| `horario_inicio` | texto (`HH:MM`) | | Horário programado de início |
+| Coluna             | Tipo            | Chave | Descrição                                                                                 |
+| :----------------- | :-------------- | :---- | :---------------------------------------------------------------------------------------- |
+| `atracao_id`       | inteiro         | PK    | Identificador único da atração                                                            |
+| `nome_artista`     | texto           |       | Nome fictício da banda/artista                                                            |
+| `genero_musical`   | texto           |       | `rock` · `pop` · `mpb` · `eletronica` · `funk` · `sertanejo` · `rap` · `forró` · `reggae` |
+| `edicao_festival`  | texto           |       | Edição do festival em que a atração se apresenta (ex.: "Festival X 2024")                 |
+| `dia_apresentacao` | data            |       | Dia do festival em que se apresenta (dentro da janela de 3 dias da edição)                |
+| `palco`            | texto           |       | `principal` · `secundario` · `eletronico` · `acustico`                                    |
+| `horario_inicio`   | texto (`HH:MM`) |       | Horário programado de início                                                              |
 
 ### Tabela 2: `ingressos_vendidos` (fato/evento)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `venda_id` | inteiro | PK | Identificador único da venda |
-| `atracao_id` | inteiro | FK → `atracoes.atracao_id` | Atração associada ao ingresso (dia/lote vinculado à atração de referência) |
-| `tipo_ingresso` | texto | | `pista` · `pista_premium` · `vip` · `camarote` |
-| `canal_venda` | texto | | `site` · `app` · `bilheteria_fisica` · `revenda_parceira` |
-| `data_hora_venda` | data/hora | | Momento da venda |
-| `valor` | decimal | | Valor pago pelo ingresso, em reais |
-| `forma_pagamento` | texto | | `cartao_credito` · `cartao_debito` · `pix` · `boleto` |
+| Coluna            | Tipo      | Chave                      | Descrição                                                                  |
+| :---------------- | :-------- | :------------------------- | :------------------------------------------------------------------------- |
+| `venda_id`        | inteiro   | PK                         | Identificador único da venda                                               |
+| `atracao_id`      | inteiro   | FK → `atracoes.atracao_id` | Atração associada ao ingresso (dia/lote vinculado à atração de referência) |
+| `tipo_ingresso`   | texto     |                            | `pista` · `pista_premium` · `vip` · `camarote`                             |
+| `canal_venda`     | texto     |                            | `site` · `app` · `bilheteria_fisica` · `revenda_parceira`                  |
+| `data_hora_venda` | data/hora |                            | Momento da venda                                                           |
+| `valor`           | decimal   |                            | Valor pago pelo ingresso, em reais                                         |
+| `forma_pagamento` | texto     |                            | `cartao_credito` · `cartao_debito` · `pix` · `boleto`                      |
 
 ---
 
@@ -67,11 +67,11 @@ Cada atração (usada aqui como proxy do "dia/lote" do festival) está associada
 
 Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linhas por tabela.
 
-| Tabela | Linhas geradas |
-|:--|--:|
-| `atracoes` | 10.100 |
-| `ingressos_vendidos` | 55.000 |
-| **Total** | **65.100** |
+| Tabela               | Linhas geradas |
+| :------------------- | -------------: |
+| `atracoes`           |         10.100 |
+| `ingressos_vendidos` |         55.000 |
+| **Total**            |     **65.100** |
 
 ---
 
@@ -79,13 +79,13 @@ Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linha
 
 **Distribuições definidas no script**
 
-| Campo | Regra |
-|:--|:--|
-| `genero_musical` | `pop` 16% · `rock`, `eletronica` e `sertanejo` 14% cada · `funk` 12% · `mpb` e `rap` 10% cada · `forró` e `reggae` 5% cada |
-| `palco` | `secundario` 35% · `principal` 30% · `eletronico` 20% · `acustico` 15% |
-| `tipo_ingresso` | `pista` 55% · `pista_premium` 20% · `vip` 18% · `camarote` 7% |
-| `canal_venda` | `site` 40% · `app` 35% · `bilheteria_fisica` 15% · `revenda_parceira` 10% |
-| `forma_pagamento` | `cartao_credito` 50% · `pix` 30% · `cartao_debito` 15% · `boleto` 5% |
+| Campo             | Regra                                                                                                                      |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `genero_musical`  | `pop` 16% · `rock`, `eletronica` e `sertanejo` 14% cada · `funk` 12% · `mpb` e `rap` 10% cada · `forró` e `reggae` 5% cada |
+| `palco`           | `secundario` 35% · `principal` 30% · `eletronico` 20% · `acustico` 15%                                                     |
+| `tipo_ingresso`   | `pista` 55% · `pista_premium` 20% · `vip` 18% · `camarote` 7%                                                              |
+| `canal_venda`     | `site` 40% · `app` 35% · `bilheteria_fisica` 15% · `revenda_parceira` 10%                                                  |
+| `forma_pagamento` | `cartao_credito` 50% · `pix` 30% · `cartao_debito` 15% · `boleto` 5%                                                       |
 
 **Como as linhas são produzidas**
 
@@ -112,4 +112,4 @@ Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linha
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)

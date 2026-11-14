@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icones/07-telemetria-esportiva.svg" width="88" height="88" alt="Icone do tema Telemetria esportiva">
+  <img src="../../icones/07-telemetria-esportiva.svg" width="88" height="88" alt="Icone do tema Telemetria esportiva">
 </p>
 
 <h1 align="center">Tema 7 &mdash; Telemetria Esportiva (Corridas)</h1>
@@ -9,8 +9,8 @@
   Plano de modelagem da base de dados mockada
 </p>
 
-| Desafio de origem | Uso nos desafios | Situação | Gerador |
-|:--|:--|:--|:--|
+| Desafio de origem   | Uso nos desafios  | Situação                                           | Gerador                    |
+| :------------------ | :---------------- | :------------------------------------------------- | :------------------------- |
 | Trabalho 1 (Python) | 1 · 2 · 3 · 4 · 5 | Plano validado contra o script; base gerada em CSV | `gerar_bases.py` (seed 42) |
 
 **Nesta página:** [Contexto](#contexto-do-tema) · [Modelo de dados](#modelo-de-dados) · [Cardinalidade](#cardinalidade) · [Volumetria](#volumetria) · [Geração](#estratégia-de-geração-de-dados-mockados) · [Expansão](#expansão-sugerida-para-o-desafio-4) · [Pendências](#pendências)
@@ -27,26 +27,26 @@ Dados de telemetria de um simulador de corrida online: pilotos cadastrados e o d
 
 ### Tabela 1: `pilotos` (dimensão/cadastro)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `piloto_id` | inteiro | PK | Identificador único do piloto |
-| `nome_ficticio` | texto | | Gamertag fictícia (ex.: `FastPro123`) |
-| `equipe` | texto | | Nome fictício da equipe (formato "Equipe X Racing") |
-| `categoria` | texto | | `kart` · `formula_sim` · `stock_sim` · `rally_sim` |
-| `pais` | texto | | País de origem (real, sem dado pessoal associado) |
+| Coluna      | Tipo    | Chave | Descrição                                           |
+| :---------- | :------ | :---- | :-------------------------------------------------- |
+| `piloto_id` | inteiro | PK    | Identificador único do piloto                       |
+| `nome`      | texto   |       | Gamertag fictícia (ex.: `FastPro123`)               |
+| `equipe`    | texto   |       | Nome fictício da equipe (formato "Equipe X Racing") |
+| `categoria` | texto   |       | `kart` · `formula_sim` · `stock_sim` · `rally_sim`  |
+| `pais`      | texto   |       | País de origem (real, sem dado pessoal associado)   |
 
 ### Tabela 2: `voltas` (fato/evento)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `volta_id` | inteiro | PK | Identificador único do registro de volta |
-| `piloto_id` | inteiro | FK → `pilotos.piloto_id` | Piloto que completou a volta |
-| `corrida_id` | inteiro | | Identificador da corrida/evento (de 1 a 1.100) |
-| `numero_volta` | inteiro | | Número sequencial da volta dentro da corrida (de 1 a 5) |
-| `tempo_volta_seg` | decimal | | Tempo da volta, em segundos |
-| `velocidade_media_kmh` | decimal | | Velocidade média na volta |
-| `combustivel_restante_pct` | decimal | | Combustível restante ao final da volta, em % |
-| `posicao_na_volta` | inteiro | | Posição do piloto ao cruzar a linha naquela volta (de 1 a 10) |
+| Coluna                     | Tipo    | Chave                    | Descrição                                                     |
+| :------------------------- | :------ | :----------------------- | :------------------------------------------------------------ |
+| `volta_id`                 | inteiro | PK                       | Identificador único do registro de volta                      |
+| `piloto_id`                | inteiro | FK → `pilotos.piloto_id` | Piloto que completou a volta                                  |
+| `corrida_id`               | inteiro |                          | Identificador da corrida/evento (de 1 a 1.100)                |
+| `numero_volta`             | inteiro |                          | Número sequencial da volta dentro da corrida (de 1 a 5)       |
+| `tempo_volta_seg`          | decimal |                          | Tempo da volta, em segundos                                   |
+| `velocidade_media_kmh`     | decimal |                          | Velocidade média na volta                                     |
+| `combustivel_restante_pct` | decimal |                          | Combustível restante ao final da volta, em %                  |
+| `posicao_na_volta`         | inteiro |                          | Posição do piloto ao cruzar a linha naquela volta (de 1 a 10) |
 
 ---
 
@@ -64,11 +64,11 @@ Um piloto participa de muitas voltas; cada registro de volta pertence a um únic
 
 Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linhas por tabela.
 
-| Tabela | Linhas geradas |
-|:--|--:|
-| `pilotos` | 10.800 |
-| `voltas` | 55.000 |
-| **Total** | **65.800** |
+| Tabela    | Linhas geradas |
+| :-------- | -------------: |
+| `pilotos` |         10.800 |
+| `voltas`  |         55.000 |
+| **Total** |     **65.800** |
 
 As 55.000 voltas formam 1.100 corridas, cada uma com 10 pilotos e 5 voltas por piloto (1.100 × 10 × 5). Cerca de 6.900 dos 10.800 pilotos participam de pelo menos uma corrida.
 
@@ -78,11 +78,11 @@ As 55.000 voltas formam 1.100 corridas, cada uma com 10 pilotos e 5 voltas por p
 
 **Distribuições definidas no script**
 
-| Campo | Regra |
-|:--|:--|
-| `categoria` | `kart` 30% · `formula_sim` 30% · `stock_sim` 25% · `rally_sim` 15% |
-| `pais` | Brasil 35% · Estados Unidos 10% · Alemanha 9% · Argentina e Itália 8% cada · Japão e França 7% cada · Portugal 6% · México e Espanha 5% cada |
-| `equipe` | Sorteio entre até 400 nomes gerados (podem se repetir por acaso) |
+| Campo       | Regra                                                                                                                                        |
+| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| `categoria` | `kart` 30% · `formula_sim` 30% · `stock_sim` 25% · `rally_sim` 15%                                                                           |
+| `pais`      | Brasil 35% · Estados Unidos 10% · Alemanha 9% · Argentina e Itália 8% cada · Japão e França 7% cada · Portugal 6% · México e Espanha 5% cada |
+| `equipe`    | Sorteio entre até 400 nomes gerados (podem se repetir por acaso)                                                                             |
 
 **Como as linhas são produzidas**
 
@@ -108,4 +108,4 @@ As 55.000 voltas formam 1.100 corridas, cada uma com 10 pilotos e 5 voltas por p
 
 ---
 
-[Voltar ao índice](README.md)
+[Voltar ao índice](../../README.md)
