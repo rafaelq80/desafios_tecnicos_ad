@@ -9,8 +9,8 @@
   Plano de modelagem da base de dados mockada
 </p>
 
-| Desafio de origem | Uso nos desafios | Situação | Gerador |
-|:--|:--|:--|:--|
+| Desafio de origem   | Uso nos desafios  | Situação                                           | Gerador                    |
+| :------------------ | :---------------- | :------------------------------------------------- | :------------------------- |
 | Trabalho 1 (Python) | 1 · 2 · 3 · 4 · 5 | Plano validado contra o script; base gerada em CSV | `gerar_bases.py` (seed 42) |
 
 **Nesta página:** [Contexto](#contexto-do-tema) · [Modelo de dados](#modelo-de-dados) · [Cardinalidade](#cardinalidade) · [Volumetria](#volumetria) · [Geração](#estratégia-de-geração-de-dados-mockados) · [Expansão](#expansão-sugerida-para-o-desafio-4) · [Pendências](#pendências)
@@ -27,27 +27,27 @@ Um catálogo de filmes com histórico de visualizações por usuário. É um cen
 
 ### Tabela 1: `filmes` (dimensão/catálogo)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `filme_id` | inteiro | PK | Identificador único do filme |
-| `titulo` | texto | | Título fictício e genérico (não usar título de filme real protegido por direito autoral em material publicado) |
-| `genero` | texto | | `ação` · `comédia` · `drama` · `terror` · `documentário` · `animação` · `ficção científica` · `romance` |
-| `ano_lancamento` | inteiro | | Ano fictício de lançamento (entre 1985 e 2024) |
-| `duracao_min` | inteiro | | Duração em minutos (entre 75 e 184) |
-| `classificacao_indicativa` | texto | | `L` · `10` · `12` · `14` · `16` · `18` |
-| `diretor_ficticio` | texto | | Nome fictício de diretor (gerado por Faker) |
+| Coluna                     | Tipo    | Chave | Descrição                                                                                                      |
+| :------------------------- | :------ | :---- | :------------------------------------------------------------------------------------------------------------- |
+| `filme_id`                 | inteiro | PK    | Identificador único do filme                                                                                   |
+| `titulo`                   | texto   |       | Título fictício e genérico (não usar título de filme real protegido por direito autoral em material publicado) |
+| `genero`                   | texto   |       | `ação` · `comédia` · `drama` · `terror` · `documentário` · `animação` · `ficção científica` · `romance`        |
+| `ano_lancamento`           | inteiro |       | Ano fictício de lançamento (entre 1985 e 2024)                                                                 |
+| `duracao_min`              | inteiro |       | Duração em minutos (entre 75 e 184)                                                                            |
+| `classificacao_indicativa` | texto   |       | `L` · `10` · `12` · `14` · `16` · `18`                                                                         |
+| `diretor`                  | texto   |       | Nome fictício de diretor (gerado por Faker)                                                                    |
 
 ### Tabela 2: `visualizacoes` (fato/evento)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `visualizacao_id` | inteiro | PK | Identificador único da visualização |
-| `filme_id` | inteiro | FK → `filmes.filme_id` | Filme assistido |
-| `usuario_id` | inteiro | | Identificador fictício de usuário (sem dado pessoal) |
-| `data_hora_inicio` | data/hora | | Início da sessão de visualização |
-| `tempo_assistido_min` | inteiro | | Minutos efetivamente assistidos |
-| `dispositivo` | texto | | `smart_tv` · `celular` · `computador` · `tablet` · `console` |
-| `concluido` | booleano | | Se o usuário assistiu até o fim |
+| Coluna                | Tipo      | Chave                  | Descrição                                                    |
+| :-------------------- | :-------- | :--------------------- | :----------------------------------------------------------- |
+| `visualizacao_id`     | inteiro   | PK                     | Identificador único da visualização                          |
+| `filme_id`            | inteiro   | FK → `filmes.filme_id` | Filme assistido                                              |
+| `usuario_id`          | inteiro   |                        | Identificador fictício de usuário (sem dado pessoal)         |
+| `data_hora_inicio`    | data/hora |                        | Início da sessão de visualização                             |
+| `tempo_assistido_min` | inteiro   |                        | Minutos efetivamente assistidos                              |
+| `dispositivo`         | texto     |                        | `smart_tv` · `celular` · `computador` · `tablet` · `console` |
+| `concluido`           | booleano  |                        | Se o usuário assistiu até o fim                              |
 
 ---
 
@@ -65,11 +65,11 @@ Um filme é assistido muitas vezes; cada visualização é de exatamente um film
 
 Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linhas por tabela.
 
-| Tabela | Linhas geradas |
-|:--|--:|
-| `filmes` | 10.300 |
-| `visualizacoes` | 55.000 |
-| **Total** | **65.300** |
+| Tabela          | Linhas geradas |
+| :-------------- | -------------: |
+| `filmes`        |         10.300 |
+| `visualizacoes` |         55.000 |
+| **Total**       |     **65.300** |
 
 ---
 
@@ -77,13 +77,13 @@ Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linha
 
 **Distribuições definidas no script**
 
-| Campo | Regra |
-|:--|:--|
-| `genero` | `drama` 18% · `ação` 16% · `comédia` 15% · `ficção científica` 12% · `animação` 11% · `terror` 10% · `romance` 10% · `documentário` 8% |
-| `classificacao_indicativa` | `L` 25% · `12` 20% · `14` 20% · `10` 15% · `16` 12% · `18` 8% |
-| `dispositivo` | `smart_tv` 40% · `celular` 30% · `computador` 15% · `tablet` 10% · `console` 5% |
-| `usuario_id` | Sorteio uniforme entre 1 e 59.999 (cerca de 36 mil usuários distintos aparecem) |
-| `data_hora_inicio` | Entre 01/01/2025 e 01/08/2026 |
+| Campo                      | Regra                                                                                                                                  |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| `genero`                   | `drama` 18% · `ação` 16% · `comédia` 15% · `ficção científica` 12% · `animação` 11% · `terror` 10% · `romance` 10% · `documentário` 8% |
+| `classificacao_indicativa` | `L` 25% · `12` 20% · `14` 20% · `10` 15% · `16` 12% · `18` 8%                                                                          |
+| `dispositivo`              | `smart_tv` 40% · `celular` 30% · `computador` 15% · `tablet` 10% · `console` 5%                                                        |
+| `usuario_id`               | Sorteio uniforme entre 1 e 59.999 (cerca de 36 mil usuários distintos aparecem)                                                        |
+| `data_hora_inicio`         | Entre 01/01/2025 e 01/08/2026                                                                                                          |
 
 **Como as linhas são produzidas**
 

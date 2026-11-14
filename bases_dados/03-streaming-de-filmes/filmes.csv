@@ -1,4 +1,4 @@
-filme_id,titulo,genero,ano_lancamento,duracao_min,classificacao_indicativa,diretor_ficticio
+filme_id,titulo,genero,ano_lancamento,duracao_min,classificacao_indicativa,diretor
 1,Segredo Vale,animação,1991,85,L,Pietra Brito
 2,Distante Destino,animação,2002,155,14,Luiz Miguel da Conceição
 3,Dourado Deserto,ação,1995,128,L,Joaquim da Mota

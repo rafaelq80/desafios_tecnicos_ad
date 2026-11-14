@@ -1,4 +1,4 @@
-paciente_id,nome_ficticio,data_nascimento,sexo,bairro,tipo_convenio
+paciente_id,nome,data_nascimento,sexo,bairro,tipo_convenio
 1,Juan Lopes,1983-12-08,M,Vila Madre Gertrudes 1ª Seção,SUS
 2,Rafael Abreu,2017-06-21,outro,Vila Antena,SUS
 3,Dra. Julia Montenegro,1989-01-28,M,São Francisco Das Chagas,SUS

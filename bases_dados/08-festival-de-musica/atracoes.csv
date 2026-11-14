@@ -1,4 +1,4 @@
-atracao_id,nome_artista_ficticio,genero_musical,edicao_festival,dia_apresentacao,palco,horario_inicio
+atracao_id,nome_artista,genero_musical,edicao_festival,dia_apresentacao,palco,horario_inicio
 1,Banda Moura,sertanejo,Festival Illo 2025,2025-01-23,eletronico,20:45
 2,Coletivo Casa Grande,rap,Festival Nobis 2026,2026-04-20,secundario,13:45
 3,Banda da Rosa,eletronica,Festival Voluptate 2023,2023-05-23,secundario,12:00

@@ -9,8 +9,8 @@
   Plano de modelagem da base de dados mockada
 </p>
 
-| Desafio de origem | Uso nos desafios | Situação | Gerador |
-|:--|:--|:--|:--|
+| Desafio de origem   | Uso nos desafios  | Situação                                           | Gerador                    |
+| :------------------ | :---------------- | :------------------------------------------------- | :------------------------- |
 | Trabalho 1 (Python) | 1 · 2 · 3 · 4 · 5 | Plano validado contra o script; base gerada em CSV | `gerar_bases.py` (seed 42) |
 
 **Nesta página:** [Aviso](#aviso-de-dado-sensível) · [Contexto](#contexto-do-tema) · [Modelo de dados](#modelo-de-dados) · [Cardinalidade](#cardinalidade) · [Volumetria](#volumetria) · [Geração](#estratégia-de-geração-de-dados-mockados) · [Expansão](#expansão-sugerida-para-o-desafio-4) · [Pendências](#pendências)
@@ -29,13 +29,13 @@ Uma rede de unidades básicas de saúde (postos) que recebe pacientes e aplica t
 
 **Padrão de referência:** Protocolo de Manchester (Sistema de Triagem de Manchester), com 5 níveis de prioridade por cor, usado amplamente em unidades de saúde no Brasil e em outros países. `[A VERIFICAR]` os tempos-alvo de espera por cor variam por instituição; os valores abaixo são de referência didática, não um SLA oficial de rede específica.
 
-| Cor | Prioridade | Tempo-alvo de espera (referência) |
-|:--|:--|:--|
-| Vermelho | Emergência | Imediato |
-| Laranja | Muito urgente | até 10 min |
-| Amarelo | Urgente | até 60 min |
-| Verde | Pouco urgente | até 120 min |
-| Azul | Não urgente | até 240 min |
+| Cor      | Prioridade    | Tempo-alvo de espera (referência) |
+| :------- | :------------ | :-------------------------------- |
+| Vermelho | Emergência    | Imediato                          |
+| Laranja  | Muito urgente | até 10 min                        |
+| Amarelo  | Urgente       | até 60 min                        |
+| Verde    | Pouco urgente | até 120 min                       |
+| Azul     | Não urgente   | até 240 min                       |
 
 ---
 
@@ -43,27 +43,27 @@ Uma rede de unidades básicas de saúde (postos) que recebe pacientes e aplica t
 
 ### Tabela 1: `pacientes` (dimensão/cadastro)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `paciente_id` | inteiro | PK | Identificador único (nunca CPF real) |
-| `nome_ficticio` | texto | | Nome gerado por Faker, nunca de pessoa real |
-| `data_nascimento` | data | | Usada para calcular idade |
-| `sexo` | texto | | `M` · `F` · `outro` |
-| `bairro` | texto | | Bairro fictício de residência (gerado por Faker) |
-| `tipo_convenio` | texto | | `SUS` · `particular` · `convenio` |
+| Coluna            | Tipo    | Chave | Descrição                                        |
+| :---------------- | :------ | :---- | :----------------------------------------------- |
+| `paciente_id`     | inteiro | PK    | Identificador único (nunca CPF real)             |
+| `nome`            | texto   |       | Nome gerado por Faker, nunca de pessoa real      |
+| `data_nascimento` | data    |       | Usada para calcular idade                        |
+| `sexo`            | texto   |       | `M` · `F` · `outro`                              |
+| `bairro`          | texto   |       | Bairro fictício de residência (gerado por Faker) |
+| `tipo_convenio`   | texto   |       | `SUS` · `particular` · `convenio`                |
 
 ### Tabela 2: `atendimentos` (fato/evento)
 
-| Coluna | Tipo | Chave | Descrição |
-|:--|:--|:--|:--|
-| `atendimento_id` | inteiro | PK | Identificador único do atendimento |
-| `paciente_id` | inteiro | FK → `pacientes.paciente_id` | Paciente atendido |
-| `data_hora_chegada` | data/hora | | Chegada à unidade |
-| `sintoma_principal` | texto | | Queixa relatada (lista fechada de 10 sintomas comuns) |
-| `nivel_triagem` | texto | | `vermelho` · `laranja` · `amarelo` · `verde` · `azul` |
-| `tempo_espera_min` | inteiro | | Minutos entre chegada e início do atendimento |
-| `profissional_responsavel` | texto | | Cargo fictício numerado (ex.: "Enfermeiro 03"), nunca nome real |
-| `desfecho` | texto | | `alta` · `encaminhado` · `internado` · `nao_compareceu` |
+| Coluna                     | Tipo      | Chave                        | Descrição                                                       |
+| :------------------------- | :-------- | :--------------------------- | :-------------------------------------------------------------- |
+| `atendimento_id`           | inteiro   | PK                           | Identificador único do atendimento                              |
+| `paciente_id`              | inteiro   | FK → `pacientes.paciente_id` | Paciente atendido                                               |
+| `data_hora_chegada`        | data/hora |                              | Chegada à unidade                                               |
+| `sintoma_principal`        | texto     |                              | Queixa relatada (lista fechada de 10 sintomas comuns)           |
+| `nivel_triagem`            | texto     |                              | `vermelho` · `laranja` · `amarelo` · `verde` · `azul`           |
+| `tempo_espera_min`         | inteiro   |                              | Minutos entre chegada e início do atendimento                   |
+| `profissional_responsavel` | texto     |                              | Cargo fictício numerado (ex.: "Enfermeiro 03"), nunca nome real |
+| `desfecho`                 | texto     |                              | `alta` · `encaminhado` · `internado` · `nao_compareceu`         |
 
 ---
 
@@ -81,11 +81,11 @@ Um paciente pode ter vários atendimentos ao longo do tempo simulado; cada atend
 
 Mínimo do projeto: 20.000 linhas somadas. O script gera pelo menos 10.000 linhas por tabela.
 
-| Tabela | Linhas geradas |
-|:--|--:|
-| `pacientes` | 10.500 |
-| `atendimentos` | 42.000 |
-| **Total** | **52.500** |
+| Tabela         | Linhas geradas |
+| :------------- | -------------: |
+| `pacientes`    |         10.500 |
+| `atendimentos` |         42.000 |
+| **Total**      |     **52.500** |
 
 Média de aproximadamente 4 atendimentos por paciente, entre 01/01/2025 e 01/08/2026.
 
@@ -95,15 +95,15 @@ Média de aproximadamente 4 atendimentos por paciente, entre 01/01/2025 e 01/08/
 
 **Distribuições definidas no script**
 
-| Campo | Regra |
-|:--|:--|
-| Faixa etária | Criança (0 a 11 anos) 22% · adulto (12 a 59) 53% · idoso (60 a 94) 25% |
-| `sexo` | `F` 51% · `M` 47% · `outro` 2% |
-| `tipo_convenio` | `SUS` 68% · `convenio` 20% · `particular` 12% |
-| `nivel_triagem` | vermelho 2% · laranja 8% · amarelo 35% · verde 40% · azul 15% |
-| `desfecho` | Aproximadamente `alta` 72% · `encaminhado` 16% · `nao_compareceu` 6% · `internado` 5%. Casos vermelho e laranja nunca são `nao_compareceu` |
-| `sintoma_principal` | Uniforme entre 10 sintomas (dor no peito, febre, corte/ferimento, falta de ar, dor abdominal, tontura, dor de cabeça, vômito/náusea, alergia, check-up de rotina) |
-| `profissional_responsavel` | Enfermeiro, Enfermeira ou Tecnico Enfermagem, numerados de 01 a 24 |
+| Campo                      | Regra                                                                                                                                                             |
+| :------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Faixa etária               | Criança (0 a 11 anos) 22% · adulto (12 a 59) 53% · idoso (60 a 94) 25%                                                                                            |
+| `sexo`                     | `F` 51% · `M` 47% · `outro` 2%                                                                                                                                    |
+| `tipo_convenio`            | `SUS` 68% · `convenio` 20% · `particular` 12%                                                                                                                     |
+| `nivel_triagem`            | vermelho 2% · laranja 8% · amarelo 35% · verde 40% · azul 15%                                                                                                     |
+| `desfecho`                 | Aproximadamente `alta` 72% · `encaminhado` 16% · `nao_compareceu` 6% · `internado` 5%. Casos vermelho e laranja nunca são `nao_compareceu`                        |
+| `sintoma_principal`        | Uniforme entre 10 sintomas (dor no peito, febre, corte/ferimento, falta de ar, dor abdominal, tontura, dor de cabeça, vômito/náusea, alergia, check-up de rotina) |
+| `profissional_responsavel` | Enfermeiro, Enfermeira ou Tecnico Enfermagem, numerados de 01 a 24                                                                                                |
 
 **Como as linhas são produzidas**
 
