@@ -70,7 +70,9 @@ Todo o cálculo é feito com o **pandas**, dentro do Colab. O relatório é o **
 
 - Redigir uma recomendação de decisão apoiada em pelo menos duas medidas estatísticas.
 
-- Produzir, como diferencial, gráficos com seaborn, matplotlib ou plotly.
+- Produzir, como diferencial, gráficos com seaborn e matplotlib.
+
+![](../imagens/image46.png)
 
 ---
 
