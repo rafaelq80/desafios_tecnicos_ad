@@ -9,9 +9,9 @@
   Plano de modelagem da base de dados mockada
 </p>
 
-| Desafio de origem   | Uso nos desafios  | Situação                                           | Gerador                    |
-| :------------------ | :---------------- | :------------------------------------------------- | :------------------------- |
-| Trabalho 1 (Python) | 1 · 2 · 3 · 4 · 5 | Plano validado contra o script; base gerada em CSV | `gerar_bases.py` (seed 42) |
+| Desafio de origem   | Uso nos desafios  | Situação                                           | Gerador                                                                |
+| :------------------ | :---------------- | :------------------------------------------------- | :--------------------------------------------------------------------- |
+| Trabalho 1 (Python) | 1 · 2 · 3 · 4 · 5 | Plano validado contra o script; base gerada em CSV | `gerar_bases.py` ou `gerar_bases_6_7.py` (seed 42; resultado idêntico) |
 
 **Nesta página:** [Contexto](#contexto-do-tema) · [Modelo de dados](#modelo-de-dados) · [Cardinalidade](#cardinalidade) · [Volumetria](#volumetria) · [Geração](#estratégia-de-geração-de-dados-mockados) · [Expansão](#expansão-sugerida-para-o-desafio-4) · [Pendências](#pendências)
 
@@ -19,7 +19,7 @@
 
 ## Contexto do tema
 
-Dados de telemetria de um simulador de corrida online: pilotos cadastrados e o desempenho volta a volta em cada corrida. É um cenário rico para análise de performance (tempo de volta, consistência, consumo de combustível), tema já familiar a quem gosta de esportes a motor.
+Dados de telemetria de um simulador de corrida online: pilotos cadastrados e o desempenho volta a volta em cada corrida. É um cenário rico para análise de performance (tempo de volta, consistência, consumo de combustível, impacto de pit stops e saídas de pista), tema já familiar a quem gosta de esportes a motor.
 
 ---
 
@@ -37,16 +37,17 @@ Dados de telemetria de um simulador de corrida online: pilotos cadastrados e o d
 
 ### Tabela 2: `voltas` (fato/evento)
 
-| Coluna                     | Tipo    | Chave                    | Descrição                                                     |
-| :------------------------- | :------ | :----------------------- | :------------------------------------------------------------ |
-| `volta_id`                 | inteiro | PK                       | Identificador único do registro de volta                      |
-| `piloto_id`                | inteiro | FK → `pilotos.piloto_id` | Piloto que completou a volta                                  |
-| `corrida_id`               | inteiro |                          | Identificador da corrida/evento (de 1 a 1.100)                |
-| `numero_volta`             | inteiro |                          | Número sequencial da volta dentro da corrida (de 1 a 5)       |
-| `tempo_volta_seg`          | decimal |                          | Tempo da volta, em segundos                                   |
-| `velocidade_media_kmh`     | decimal |                          | Velocidade média na volta                                     |
-| `combustivel_restante_pct` | decimal |                          | Combustível restante ao final da volta, em %                  |
-| `posicao_na_volta`         | inteiro |                          | Posição do piloto ao cruzar a linha naquela volta (de 1 a 10) |
+| Coluna                     | Tipo    | Chave                    | Descrição                                                                |
+| :------------------------- | :------ | :----------------------- | :----------------------------------------------------------------------- |
+| `volta_id`                 | inteiro | PK                       | Identificador único do registro de volta                                 |
+| `piloto_id`                | inteiro | FK → `pilotos.piloto_id` | Piloto que completou a volta                                             |
+| `corrida_id`               | inteiro |                          | Identificador da corrida/evento (de 1 a 1.100)                           |
+| `numero_volta`             | inteiro |                          | Número sequencial da volta dentro da corrida (de 1 a 5)                  |
+| `status_volta`             | texto   |                          | Situação da volta: `normal` · `pit_stop` · `saida_de_pista`              |
+| `tempo_volta_seg`          | decimal |                          | Tempo da volta, em segundos (entre 40 e 160)                             |
+| `velocidade_media_kmh`     | decimal |                          | Velocidade média na volta                                                |
+| `combustivel_restante_pct` | decimal |                          | Combustível restante ao final da volta, em %                             |
+| `posicao_na_volta`         | inteiro |                          | Posição do piloto ao cruzar a linha naquela volta (de 1 a 10)            |
 
 ---
 
@@ -76,28 +77,43 @@ As 55.000 voltas formam 1.100 corridas, cada uma com 10 pilotos e 5 voltas por p
 
 ## Estratégia de geração de dados mockados
 
+O tema 7 tem **gerador próprio** (numpy com semente `[42, 7]` e Faker com semente 49), independente dos outros temas. Por isso o resultado é o mesmo no script completo (`gerar_bases.py`) e no reduzido (`gerar_bases_6_7.py`), e dá para regerar só este tema sem alterar os demais.
+
 **Distribuições definidas no script**
 
-| Campo       | Regra                                                                                                                                        |
-| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
-| `categoria` | `kart` 30% · `formula_sim` 30% · `stock_sim` 25% · `rally_sim` 15%                                                                           |
-| `pais`      | Brasil 35% · Estados Unidos 10% · Alemanha 9% · Argentina e Itália 8% cada · Japão e França 7% cada · Portugal 6% · México e Espanha 5% cada |
-| `equipe`    | Sorteio entre até 400 nomes gerados (podem se repetir por acaso)                                                                             |
+| Campo          | Regra                                                                                                                                        |
+| :------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| `categoria`    | `kart` 30% · `formula_sim` 30% · `stock_sim` 25% · `rally_sim` 15%                                                                           |
+| `pais`         | Brasil 35% · Estados Unidos 10% · Alemanha 9% · Argentina e Itália 8% cada · Japão e França 7% cada · Portugal 6% · México e Espanha 5% cada |
+| `equipe`       | Sorteio entre até 400 nomes gerados (podem se repetir por acaso)                                                                             |
+| `status_volta` | Resultado da simulação de cada volta (ver abaixo): cerca de 96% `normal`, 3% `pit_stop` e 1,2% `saida_de_pista`                              |
 
 **Como as linhas são produzidas**
 
 - Cada corrida sorteia uma **categoria** e 10 pilotos **dessa categoria**, sem repetição. Todos os pilotos de uma corrida correm a mesma categoria.
-- `tempo_volta_seg` = tempo-base da pista (kart 55 s, formula_sim 85 s, stock_sim 95 s, rally_sim 110 s, com variação de 4 s por corrida) + habilidade do piloto naquela corrida (desvio 1,5 s) + ruído por volta (desvio 1,2 s), limitado entre 40 e 160 s.
-- `velocidade_media_kmh` = velocidade de referência da categoria (kart 70, formula_sim 180, stock_sim 150, rally_sim 100 km/h) × tempo-base da pista ÷ `tempo_volta_seg`. Quanto menor o tempo, maior a velocidade.
-- `combustivel_restante_pct` = 100 − `numero_volta` × consumo por volta do piloto (sorteado entre 6 e 9 por corrida). Sempre decresce volta a volta dentro de piloto + corrida, terminando entre 55% e 70% na volta 5.
-- `posicao_na_volta` é o ranking do tempo acumulado dos pilotos na corrida até aquela volta, então não há posições repetidas na mesma volta.
+- `status_volta`:
+  - `pit_stop`: chance de 5% por volta, **somente nas voltas 2 a 4** (nunca na primeira nem na última), e acrescenta de 18 a 28 s ao tempo da volta;
+  - `saida_de_pista`: chance de 1,2% por volta (em qualquer volta, e nunca junto com pit stop), e acrescenta de 6 a 20 s;
+  - `normal`: todas as demais, sem penalidade.
+- `tempo_volta_seg` = tempo-base da pista (kart 55 s, formula_sim 85 s, stock_sim 95 s, rally_sim 110 s, com variação de 4 s por corrida) + habilidade do piloto naquela corrida (desvio 1,5 s) + ruído por volta (desvio 1,2 s) + penalidade do `status_volta`, limitado entre 40 e 160 s.
+- `velocidade_media_kmh` = velocidade de referência da categoria (kart 70, formula_sim 180, stock_sim 150, rally_sim 100 km/h) × tempo-base da pista ÷ `tempo_volta_seg`. Quanto menor o tempo, maior a velocidade; por isso voltas com pit stop ou saída de pista também têm velocidade menor.
+- `combustivel_restante_pct` = 100 − `numero_volta` × consumo por volta do piloto (sorteado entre 6 e 9 por corrida). Sempre decresce volta a volta dentro de piloto + corrida, terminando entre 55% e 70% na volta 5. O pit stop **não reabastece**: o combustível não depende de `status_volta`.
+- `posicao_na_volta` é o ranking do tempo acumulado dos pilotos na corrida até aquela volta, então não há posições repetidas na mesma volta. Como pit stops e saídas de pista aumentam o tempo, eles podem mudar a posição do piloto.
+
+> **Mudança em relação à versão anterior.** O tempo de volta antes dependia apenas da pista, da habilidade e do ruído. Agora `status_volta` introduz voltas anormais mais lentas (e com velocidade menor), o que cria *outliers* de tempo explicáveis por uma coluna categórica e torna a posição menos previsível.
 
 > **Ajuste em relação ao plano original.** O plano previa 120 pilotos e cerca de 50 corridas de 50 voltas. Para manter pelo menos 10.000 pilotos cadastrados e 55.000 voltas, o script gera 1.100 corridas curtas de 5 voltas, com 10 pilotos cada. A propriedade central do plano (combustível decrescente e monotônico dentro da corrida) é garantida pelo script revisado.
 
 **Pontos de atenção para o Desafio 4**
 
-- Quase 4.000 pilotos cadastrados não têm nenhuma volta registrada, e a maioria dos que têm participa de poucas corridas (em média 8 voltas, ou cerca de 1,6 corrida). Um `LEFT JOIN` a partir de `pilotos` mostra esse efeito.
+- Quase 4.000 pilotos cadastrados (3.884) não têm nenhuma volta registrada, e a maioria dos que têm participa de poucas corridas (em média 8 voltas, ou cerca de 1,6 corrida). Um `LEFT JOIN` a partir de `pilotos` mostra esse efeito.
 - `corrida_id` ainda não tem pista, data ou categoria própria; essas informações só aparecem de forma indireta, pela categoria dos pilotos. A normalização em `corridas` (abaixo) resolve isso.
+- Em cada categoria, a mediana do tempo de volta é a menor em `normal`, intermediária em `saida_de_pista` e a maior em `pit_stop` (por exemplo, no kart: cerca de 55 s, 68 s e 78 s). Ao calcular tempo médio, consistência ou melhor volta, filtre `status_volta = 'normal'` ou compare os grupos, senão os *outliers* distorcem as métricas.
+- Pit stops só ocorrem nas voltas 2 a 4, então a volta 1 e a volta 5 nunca têm `pit_stop`.
+
+**Validações automáticas do script**
+
+O script confere, ao final, as regras deste tema: combustível nunca sobe dentro de piloto + corrida; sem posição repetida na mesma volta de uma corrida; uma única categoria por corrida; `status_volta` só assume os 3 valores válidos; `pit_stop` só nas voltas 2 a 4; e, em todas as categorias, a mediana do tempo das voltas `pit_stop` e `saida_de_pista` é maior que a das voltas `normal`.
 
 ---
 
@@ -105,6 +121,7 @@ As 55.000 voltas formam 1.100 corridas, cada uma com 10 pilotos e 5 voltas por p
 
 - Tabela `corridas` normalizando `corrida_id` (hoje solto em `voltas`) em dimensão própria com pista, data e categoria. Hoje é um atributo, e vira entidade.
 - Tabela `equipes` normalizando o campo `equipe` (hoje texto categórico em `pilotos`) em catálogo com país-sede e ano de fundação fictício.
+- Tabela `status_volta` (ou `tipos_ocorrencia`) normalizando o campo `status_volta` em catálogo com descrição e penalidade típica em segundos.
 
 ---
 
