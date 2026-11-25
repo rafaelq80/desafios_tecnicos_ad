@@ -227,13 +227,6 @@ O `Livro B` (`livro_id` 2) aparece em **dois empréstimos**: uma linha da dimens
 
 Antes de calcular qualquer métrica, é preciso trazer os arquivos CSV para o Excel e confirmar que estão limpos: coluna com o tipo certo, sem chave repetida e sem valor ausente inesperado.
 
-| **Verificação**                    | **Fórmula**                                                          | **O que você procura**                                                      |
-| ---------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Tamanho das tabelas                | `=LINS(tbl_fato)`                                                    | Quantas linhas a fato e a dimensão têm                                      |
-| Tipo da coluna numérica            | `=CONT.NÚM(...)` comparado com `=LINS(...)`                          | Os dois números iguais: todo valor é número de verdade                      |
-| Valores ausentes                   | `=CONT.VAZIO(...)`                                                   | Colunas com valor faltando, antes de qualquer média                         |
-| Chave primária repetida            | `=LINS(...)-LINS(ÚNICO(...))`                                        | `0`: nenhum registro repetido                                               |
-| Chave estrangeira entre as tabelas | `=SOMARPRODUTO(--(CONT.SE(...)=0))`                                  | `0`: todo registro da fato aponta para um cadastro que existe               |
 
 > [!WARNING]
 >
@@ -255,17 +248,8 @@ Antes de calcular qualquer métrica, é preciso trazer os arquivos CSV para o Ex
 
 ### 2.1 Buscar e validar: PROCV, SE e SEERRO
 
-O **PROCV** busca um valor na primeira coluna de uma tabela e traz outra informação da mesma linha. É a base de qualquer relatório que cruza duas tabelas, como a dimensão e a fato do seu tema.
+O **PROCX** busca um valor na tabela e traz outra informação da mesma linha ou coluna. É a base de qualquer relatório que cruza duas tabelas, como a dimensão e a fato do seu tema.
 
-| **Função** | **O que faz**                                                           | **Cuidado**                                                                   | **Exemplo (Biblioteca)**                           |
-| ---------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------- |
-| PROCV      | Procura a chave na 1ª coluna da dimensão e devolve outra coluna         | A chave precisa ser a **primeira coluna**; use `FALSO` para busca exata       | `=PROCV([@livro_id];tbl_dimensao;4;FALSO)`         |
-| SE         | Testa uma condição e devolve um resultado para verdadeiro e outro para falso | Escreva textos entre aspas                                              | `=SE([@dias_atraso]>0;"Atrasado";"No prazo")`      |
-| SEERRO     | Troca qualquer erro de fórmula (como `#N/D`) por um valor definido      | Esconde o erro, **não resolve a causa**: confira quantos erros foram trocados | `=SEERRO(PROCV(...);"Sem cadastro")`               |
-
-- Um PROCV **sem SEERRO** quebra o relatório na primeira linha com dado ausente. Por isso as duas fórmulas andam juntas.
-- Combinar **SE** com **PROCV**, ou **PROCV** dentro de **SEERRO**, resolve a maioria dos casos reais.
-- No seu tema, o PROCV normalmente busca na **dimensão** a partir da chave usada na **fato**.
 
 ### 2.2 Somar e contar por critério: a base da tabela dinâmica
 
