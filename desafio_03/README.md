@@ -75,7 +75,7 @@ Todo o trabalho é feito no **Excel para a Web**, direto no navegador. O relató
 ## 2. O que você será capaz de fazer
 
 - Construir uma **tabela dinâmica** com as métricas mais relevantes do seu tema.
-- Aplicar **PROCV, SE e SEERRO** para buscar e validar dados entre as tabelas dimensão e fato.
+- Aplicar **PROCX, SE e SEERRO** para buscar e validar dados entre as tabelas dimensão e fato.
 - Aplicar **SOMASE, SOMASES, CONT.SE, CONT.SES, MÉDIA, MÉDIASE e MÉDIASES** para calcular métricas por critério.
 - Tratar texto e data com **ARRUMAR, ÉCEL.VAZIA** e funções de data antes de calcular.
 - Aplicar **formatação condicional** e **validação de dados** para deixar o relatório confiável e fácil de ler.
@@ -93,7 +93,7 @@ Todo o trabalho é feito no **Excel para a Web**, direto no navegador. O relató
 | 3         | Transformar os dados em tabelas e conhecê-las                | Sessão Síncrona   |
 | 4         | Checar a base antes de calcular                              | Sessão Síncrona   |
 | 5         | Montar a tabela dinâmica com a métrica principal             | Sessão Síncrona   |
-| 6         | PROCV com SEERRO: trazer o cadastro para a tabela fato       | Sessão Síncrona   |
+| 6         | PROCX: trazer o cadastro para a tabela fato       | Sessão Síncrona   |
 | 7         | Somar e contar por critério: SOMASE e CONT.SE                | Sessão Síncrona   |
 | 8         | Formatação condicional e primeiras leituras                  | Sessão Síncrona   |
 | 9         | Completar as fórmulas por critério: SOMASES, CONT.SES, médias e SE | Sessão Assíncrona |
